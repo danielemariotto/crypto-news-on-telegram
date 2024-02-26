@@ -1,5 +1,5 @@
 # Crypto news on telegram
-Scrape news from https://it.cointelegraph.com/ and send them via telegram  
+Scrape news from https://cointelegraph.com/ and send them via telegram  
 check every 1 minute  
   
 create a `config.ini` file with the following content:  

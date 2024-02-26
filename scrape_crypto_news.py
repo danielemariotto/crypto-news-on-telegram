@@ -10,10 +10,11 @@ import requests
 from bs4 import BeautifulSoup
 
 # get the html content of the page
-url = 'https://it.cointelegraph.com/'
+url = 'https://cointelegraph.com/'
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
 }
+jsonNewsFile = 'en_cointelegraph.json'
  
 # telegram token and chat id
 # create a config.ini file with the following content
@@ -26,7 +27,6 @@ config.read('config.ini')
 my_token = config['main']['my_token']
 my_chat_id = config['main']['my_chat_id']
 
-jsonNewsFile = 'cointelegraph.json'
 
 def find_differences(list1, list2):
     #find the differences between two lists of news
