@@ -66,6 +66,7 @@ while True: # search for news every 1 minute
         date = n.find('time').text
         link = url + n.find('a')['href']
         news_list.append({'title': title, 'date':date, 'link':link})
+
     async def process_news ():
         try:
             with open(jsonNewsFile, 'r') as file:
@@ -74,8 +75,6 @@ while True: # search for news every 1 minute
                 differences = find_differences(news_list, old_news)
                 with open(jsonNewsFile, 'w') as file:
                     json.dump(news_list, file)
-                # for i in differences:
-                    # send_email(email_config, i)
                 await tg_send_async(differences)
         except:
             with open(jsonNewsFile, 'w') as file:
